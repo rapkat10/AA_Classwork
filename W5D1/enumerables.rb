@@ -1,7 +1,6 @@
 class Array
     
     def my_each(&prc)
-
         i = 0
         while i < self.length
             ele = self[i]
@@ -18,13 +17,6 @@ class Array
                 new_arr << el
             end
         end
-        # i = 0
-        # while i < self.length
-        #     if prc.call(self[i])
-        #         new_arr << self[i]
-        #     end
-        # i += 1
-        # end
         new_arr
     end
 
@@ -60,34 +52,15 @@ class Array
     end
 
     def my_zip(*args)
-        new_arr = Array.new(self.length) { Array.new(args.length + 1, nil) }
-        result = []
-        args.unshift(self)
-        new_arr.each_with_index do |sub_arr, i|
-            arr = []
-            args.each_with_index do |arg, idx|
-                arr << arg[0]
+        zipped = []
+        self.length.times do |i|
+            subzip = [self[i]]
+            arrays.my_each do |array|
+                subzip << array[i]
             end
-            result << arr
-            arr = []
+            zipped << subzip
         end
-        # i = 0
-        # while i < self.length
-        #     j = 0
-        #     while j < self.length
-        #         new_arr[i][j] = args[i][j]
-        #     j += 1
-        #     end
-        # i += 1
-        # end
-
-        # new_arr.each_with_index do |sub_arr, idx|
-        #     args.each_with_index do |arg, i|
-        #         sub_arr[i] = args[idx][i]
-        #     end
-        #  end
-        
-        result
+        zipped
     end
 
     def my_rotate(value = 1)

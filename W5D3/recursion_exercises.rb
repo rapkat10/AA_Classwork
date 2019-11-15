@@ -12,7 +12,7 @@ end
 
 # p range(1, 5)
 
-def sum(array)
+def sum_rec(array)
     return array[0] if array.length <= 1
     array[0] + sum(array[1..-1])
 end
@@ -92,43 +92,14 @@ end
 # Deep dup
 # The #dup method doesn't make a deep copy:
 
-def my_flatten
-      outer_arr = []
-
-      self.each do |subarr| #arr = [[1], [2,[3]]
-            if subarr.is_a? Array
-                  outer_arr += subarr.my_flatten 
-            else
-                  outer_arr << subarr   # 3 outer_arr = [3]
-            end
-      end
-
-      outer_arr
-end
-
-# def my_flatten
-#     return self if !self.is_a?(Array)
-#     flattened = []
-#     self.each do |el|
-#         if !el.is_a?(Array)
-#             flattened << el
-#         else
-#             flattened.concat(el.my_flatten)
-#         end
-#     end
-#     flattened
-# end
-
 class Array
     def deep_dup
         new_arr = []
-        # return new_arr if new_arr == self #[1, 2, [3, [3, 4]]]
         self.each_with_index do |el, i|
             if el.is_a?(Array)
-                # new_arr + self.deep_dup
                 new_arr << el.deep_dup
             else
-                new_arr << el #unless new_arr[0...i].include?(el)
+                new_arr << el 
             end
         end
         new_arr
@@ -186,17 +157,22 @@ end
 # You shouldn't have to pass any arrays between methods; you should be able to do 
 # this just passing a single argument for the number of Fibonacci numbers requested.
 
-def Fibonacci(n)
+def Fibonacci_rec(n)
     return [0, 1].take(n) if n <= 2
     fib = Fibonacci(n - 1)
     fib << fib[-1] + fib[-2]
 end
 
-
-# p Fibonacci(0)
-# p Fibonacci(1)
-# p Fibonacci(2)
-# p Fibonacci(5)
+def Fibonacci(n)
+    return [0, 1].take(n) if n <= 2
+    result = [0, 1]
+    (n - 2).times { result << result[-2..-1].sum }
+    result
+end
+p Fibonacci(0)
+p Fibonacci(1)
+p Fibonacci(2)
+p Fibonacci(5)
 
 
 # Binary Search
@@ -220,39 +196,39 @@ end
 
 def bsearch(array, target)
     return nil if array.empty?
-    
     mid_point = array.length / 2
-    arr = array[mid_point] < target ? array[0...mid_point] : array[mid_point + 1..-1]
-    # left = array.sort.[0...mid_point]
-    # right = array.sort.[mid_point..-1]
+    left = array[0...mid_point]
+    right = array[mid_point + 1..-1]
     if array[mid_point] == target 
         mid_point 
-    else 
-        bsearch(arr, target)
+    elsif array[mid_point] > target 
+        bsearch(left, target)
+    else array[mid_point] < target
+        index = bsearch(right, target)
+        index.nil? ? nil : (mid_point + 1) + index
     end
 end
-# target = 7
-# arr = [1, 2, 3, 4, 5, 7, 8]
-# 0, 1, 2
-# [1, 2, 3] [5, 7, 8]
 
-p bsearch([1, 2, 3, 4, 5, 7, 8], 7)
-p bsearch([1, 2, 3], 1) # => 0
-p bsearch([2, 3, 4, 5], 3) # => 1
-p bsearch([2, 4, 6, 8, 10], 6) # => 2
-p bsearch([1, 3, 4, 5, 9], 5) # => 3
-p bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
-p bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
-p bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
+# p bsearch([1, 2, 3], 1) # => 0
+# p bsearch([2, 3, 4, 5], 3) # => 1
+# p bsearch([2, 4, 6, 8, 10], 6) # => 2
+# p bsearch([1, 3, 4, 5, 9], 5) # => 3
+# p bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
+# p bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
+# p bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
 
 
 
 # Merge Sort
 # Implement a method merge_sort that sorts an Array:
 
-# The base cases are for arrays of length zero or one. Do not use a length-two array as a base case. This is unnecessary.
+# The base cases are for arrays of length zero or one. Do not use a length-two 
+# array as a base case. This is unnecessary.
 # You'll want to write a merge helper method to merge the sorted halves.
-# To get a visual idea of how merge sort works, watch this gif and check out this diagram.
+# To get a visual idea of how merge sort works, watch this gif and check 
+# out this diagram.
+
+
 # Array Subsets
 # Write a method subsets that will return all subsets of an array.
 
