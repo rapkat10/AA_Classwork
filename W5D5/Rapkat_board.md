@@ -1,7 +1,7 @@
 #Question 1
 #merge, proc
 #Write a new `Array#merge_sort` method that takes in a proc; it should not modify the array it is called on, but create a new sorted array. 
-
+```ruby
 class Array
     def merge_sort(&proc) # 
         proc ||= Proc.new { |num_1, num_2| num_1 <=> num_2 }
@@ -26,7 +26,7 @@ class Array
         sorted + left + right
     end
 end
-
+```
 #question 2
 #shuffled sentence detector 
 ### Shuffled Sentences
