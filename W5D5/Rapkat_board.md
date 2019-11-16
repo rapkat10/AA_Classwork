@@ -39,6 +39,7 @@ Example:
 #"cats are cool".shuffled_sentence_detector("dogs are cool") => false
 #"cool cats are".shuffled_sentence_detector("cats are cool") => true
 ``` 
+```ruby
 class String
     def shuffled_sentence_detector(string)
         string_arr = string.split(" ")
@@ -50,13 +51,15 @@ class String
         end
     end
 end
+```
+
 
 #question 3
 # my_reduce
 
 #Write an array method that calls the given block on each element and
 #combines each result one-by-one with a given accumulator. If no accumulator is given, the first element is used. 
-
+```ruby
 class Array
     def my_reduce(acc = nil, &prc)
         acc ? acc : (acc = self.shift)
@@ -66,4 +69,4 @@ class Array
         acc
     end
 end
-
+```
