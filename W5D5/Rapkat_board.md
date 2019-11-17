@@ -42,13 +42,9 @@ Example:
 ```ruby
 class String
     def shuffled_sentence_detector(string)
-        string_arr = string.split(" ")
-        self_arr = self.split(" ")
-        if self_arr.length == string_arr.length
-            self.arr.all? { |word| string_arr.include?(word) }
-        else
-            return false
-        end
+        string_arr = string.split.sort
+        self_arr = self.split.sort
+	string_arr == self_arr
     end
 end
 ```
