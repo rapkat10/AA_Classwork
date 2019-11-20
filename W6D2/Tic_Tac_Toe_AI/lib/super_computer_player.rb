@@ -7,11 +7,11 @@ class SuperComputerPlayer < ComputerPlayer
     node = TicTacToeNode.new(game.board, mark)
     
     node.children.each do |child| 
-      return child.prev_move_pos if node.winning_node?(mark)
+      return child.prev_move_pos if child.winning_node?(mark)
     end
     # debugger
     node.children.each do |child| 
-      return child.prev_move_pos if !node.losing_node?(mark)
+      return child.prev_move_pos if !child.losing_node?(mark)
     end
     raise "error"
   end
