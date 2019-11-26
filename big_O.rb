@@ -13,12 +13,12 @@ end
 
 def all_anagrams(string)
   return [string] if string.length <= 1  # O(1)
-  prev_anagrams = all_anagrams(string[0...-1]) # O(n!)
+  prev_anagrams = all_anagrams(string[0...-1]) # O(n!), O(1)
   new_anagrams = []  # O(1)
-
-  prev_anagrams.each do |anagram| #O(n)   
-    (0..anagram.length).each do |i| #(n)
-      new_anagrams << anagram.dup.insert(i, string[-1]) # ?
+                                   # O(n * n!)
+  prev_anagrams.each do |anagram| # 
+    (0..anagram.length).each do |i| #O(n)
+      new_anagrams << anagram.dup.insert(i, string[-1]) #O(n)
     end
   end
 
