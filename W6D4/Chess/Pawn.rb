@@ -3,7 +3,7 @@ require_relative "Piece"
 class Pawn < Piece
 
     attr_reader :symbol
-    def initialize(color, board, pos)
+    def initialize
         @color = color
         @symbol = @color == :black ? :♟ : :♙ # this is a guess!
         super
@@ -32,3 +32,6 @@ class Pawn < Piece
   end
 
 end
+
+pawn = Pawn.new(:White)
+p pawn
