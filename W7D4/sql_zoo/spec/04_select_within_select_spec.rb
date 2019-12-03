@@ -116,6 +116,7 @@ describe "SELECT within SELECT" do
     end
   end
 
+  
   describe "sparse_continents" do
     it "selects countries in sparsely populated continents" do
       expect(sparse_continents).to contain_exactly(
