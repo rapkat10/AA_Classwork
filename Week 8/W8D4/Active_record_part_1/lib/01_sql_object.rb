@@ -1,5 +1,6 @@
 require_relative 'db_connection'
 require 'active_support/inflector'
+require 'byebug'
 
 # NB: the attr_accessor we wrote in phase 0 is NOT used in the rest
 # of this project. It was only a warm up.
@@ -96,28 +97,28 @@ class SQLObject
   end
 
   def update
-
-    # self = human.find(2)
     values = ""
-      id = self.id
-    self.attribute_values.length.times do
-      self.attributes.each do |key, value|
-        values += "#{key} = #{value}"
-        values += "," unless key = :id
-      end
+    self.attributes.each do |key, value|
+      values += "#{key} = #{value}" if value.is_a?(Integer)
+      values += "#{key} = '#{value}'" if value.is_a?(String)
+      values += ", " unless self.attributes.keys.last == key
     end
 
-    DBConnection.execute(<<-SQL)
+    DBConnection.execute(<<-SQL, self.id)
     UPDATE
       "#{self.class.table_name}"
     SET
-      (#{values})
+      #{values}
     WHERE
-      :id = id
+      id = ?
     SQL
   end
 
   def save
-    # ...
+    if self.id.nil?
+      self.insert
+    else
+      self.update
+    end
   end
 end
