@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: cats
+#
+#  id          :bigint           not null, primary key
+#  birth_date  :date             not null
+#  color       :string           not null
+#  description :text
+#  name        :string           not null
+#  sex         :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#
+# Indexes
+#
+#  index_cats_on_user_id  (user_id)
+#
+
 require 'action_view'
 
 class Cat < ApplicationRecord
@@ -20,4 +39,10 @@ class Cat < ApplicationRecord
   def age
     time_ago_in_words(birth_date)
   end
+
+
+  belongs_to :owner,
+    foreign_key: :user_id,
+    class_name: :User
+
 end

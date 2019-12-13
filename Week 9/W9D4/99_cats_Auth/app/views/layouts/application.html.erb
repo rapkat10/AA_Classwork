@@ -9,6 +9,23 @@
   </head>
 
   <body>
+
+    <% if logged_in? %>
+      Current User: <%= current_user.user_name %>
+      <form action="<%= session_url %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Log Out">
+      </form>
+    <% elsif params[:controller] != "sessions" %>
+      <a href="<%= new_session_url %>">Log in</a>
+      <a href="<%= session_url %>">Create a user</a>
+    <% end %>
+    
+    <%= flash[:errr] %>
+    <%= flash[:success] %>
+    <%= flash[:notice] %>
+
+
     <%= yield %>
   </body>
 </html>
