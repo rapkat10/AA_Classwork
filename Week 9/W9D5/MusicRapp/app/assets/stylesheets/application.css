@@ -42,12 +42,7 @@ input[value="Sign Out"] {
    display: flex;
 }
 
-.sub-header {
-   display: inline-flex;
-   padding: 10px;
-}
-
-.page-links .button {
+.links .button {
    padding: 10px;
    display: block;
 }

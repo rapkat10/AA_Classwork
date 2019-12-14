@@ -1,17 +1,14 @@
-<h1 class='page-header'><%= @album.title %></h1>
+<h1><%= @album.title %></h1>
 
-<% if @album.tracks.length > 0 %>
-<ul class='main-list'>
+
   <% @album.tracks.each do |track| %>
-    <li><a href="<%= track_url(track) %>"><p><%= track.title %></p></a></li>
+    <a href="<%= track_url(track) %>"><p><%= track.title %></p></a>
+  <% else %>
+    <p>This album has no tracks!</p> 
   <% end %>
-</ul>
-<% else %>
-  <p>This album has no tracks!</p> 
-<% end %>
 
-<h4 class='sub-header'>Links</h4>
-<ul class='page-links'>
+<h4Links</h4>
+<ul class='links'>
   <li><a class='button' href="<%= new_album_track_url(@album) %>">New track</a></li>
   <li><a class='button' href="<%= edit_album_url(@album) %>">Edit album</a></li>
   <li>
