@@ -1,16 +1,11 @@
-<h1 class='page-header'><%= @band.name %></h1>
+<h1><%= @band.name %></h1>
 
-<h4 class='sub-header'>Albums</h4>
+<h4>Albums</h4>
 
-<% if @band.albums.length > 0 %>
-  <ul class='main-list'>
+
   <% @band.albums.each do |album| %>
-    <li><a href="<%= album_url(album) %>"><p><%= album.title %></p></a></li>
+    <a href="<%= album_url(album) %>"><p><%= album.title %></p></a>
   <% end %>
-  </ul>
-<% else %>
-  <p>This band has no albums!</p>
-<% end %>
 
 <h4>Links</h4>
 <ul class='page-links'>
