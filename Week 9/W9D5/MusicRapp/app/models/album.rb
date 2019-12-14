@@ -1,3 +1,18 @@
+
+# == Schema Information
+#
+# Table name: albums
+#
+#  id         :integer(8)      not null, primary key
+#  title      :string          not null
+#  year       :integer(4)      not null
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#  band_id    :integer(4)      not null
+#  studio     :boolean         default("true"), not null
+#
+
+
 class Album < ApplicationRecord
 
     validates :title, :year, :band_id, presence: true
@@ -19,17 +34,4 @@ class Album < ApplicationRecord
     
 end
 
-
-# == Schema Information
-#
-# Table name: albums
-#
-#  id         :integer(8)      not null, primary key
-#  title      :string          not null
-#  year       :integer(4)      not null
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#  band_id    :integer(4)      not null
-#  studio     :boolean         default("true"), not null
-#
 
