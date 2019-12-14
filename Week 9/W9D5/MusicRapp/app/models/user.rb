@@ -22,6 +22,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     after_initialize :ensure_session_token
+    # vefore_validates :ensure_session_token
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

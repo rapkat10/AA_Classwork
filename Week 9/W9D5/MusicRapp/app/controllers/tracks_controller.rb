@@ -30,13 +30,19 @@ class TracksController < ApplicationController
     end
 
     def update
-        @track = current_user.tracks.find(params[:id])
+        @track = Track.find(params[:id])
         if @track.update_attributes(track_params)
             redirect_to track_url(@track)
         else
             flash.now[:errors] = @track.errors.full_messages
             render :edit
         end
+    end
+
+    def destroy
+        @track = Track.find(params[:id])
+        @track.destroy
+        redirect_to album_url(@track.album_id)
     end
 
     private
