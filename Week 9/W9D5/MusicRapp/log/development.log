@@ -1,0 +1,3180 @@
+  [1m[35m (207.6ms)[0m  [1m[35mCREATE DATABASE "MusicRapp_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (127.4ms)[0m  [1m[35mCREATE DATABASE "MusicRapp_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20191213193440)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (26.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191213193440_create_users.rb:3
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20191213193440_create_users.rb:10
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191213193440_create_users.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213193440"]]
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-13 19:40:10.947000"], ["updated_at", "2019-12-13 19:40:10.947000"]]
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-12-13 14:19:05 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (8.1ms)
+Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:20:08 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (5.7ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:20:09 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (6.1ms)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 14:21:07 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (9.4ms)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:21:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 769ms (Views: 768.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:22:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:22:45 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:23:21 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:23:47 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:23:49 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:24:57 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:24:59 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:25:51 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:26:23 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:28:03 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:30:48 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (40.3ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::MissingTemplate - Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/rapkat/Desktop/App_Academy_Classwork/Week 9/W9D5/MusicRapp/app/views"
+:
+  app/views/sessions/new.html.erb:4:in `_app_views_sessions_new_html_erb__3358894736247523991_69982164965400'
+  app/controllers/sessions_controller.rb:27:in `new'
+
+Started POST "/__better_errors/0bc732a02d9d0b34/variables" for ::1 at 2019-12-13 14:30:48 -0700
+Started GET "/session/new" for ::1 at 2019-12-13 14:32:09 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:33:35 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:33:47 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.0ms)
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:35:03 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 78ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:35:32 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 80ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:35:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 124ms (Views: 123.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:36:47 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 97ms (Views: 95.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:37:06 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (2.7ms)
+  Rendered sessions/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 109ms (Views: 106.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:37:15 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 106ms (Views: 104.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-12-13 14:37:31 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"N20xg9uTHyNF7RDGejmoETP3MEI5xc+tRCp0HopSem66ZfpE1VMctA4xBed1mafYSSplKC7wxTU/YcQXcJ3OHA==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 88ms (Views: 59.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:40:28 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 207ms (Views: 205.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:41:23 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.8ms)
+  Rendered sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:47:21 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.6ms)
+  Rendered sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:48:10 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (2.1ms)
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:50:30 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 14:50:34 -0700
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 11.0ms)
+
+
+
+ActionView::MissingTemplate - Missing template users/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/rapkat/Desktop/App_Academy_Classwork/Week 9/W9D5/MusicRapp/app/views"
+:
+  app/controllers/users_controller.rb:18:in `new'
+
+Started POST "/__better_errors/b9c718dcbfecf3b3/variables" for ::1 at 2019-12-13 14:50:34 -0700
+Started GET "/session/new" for ::1 at 2019-12-13 14:50:38 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:52:53 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 71ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:52:56 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.4ms)
+  Rendered sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:54:32 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:55:42 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:56:04 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 14:56:35 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:01:39 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:02:17 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:02:50 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 72ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:02:56 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (2.3ms)
+  Rendered sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:03:05 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.2ms)
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 169ms (Views: 167.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:03:27 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.1ms)
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:20:08 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/c7e09e7470cab833/variables" for ::1 at 2019-12-13 15:20:09 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBands (20191213220606)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (24.2ms)[0m  [1m[35mCREATE TABLE "bands" ("id" bigserial primary key, "name" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191213220606_create_bands.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213220606"]]
+  ↳ bin/rails:9
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/session/new" for ::1 at 2019-12-13 15:21:03 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (2.5ms)
+  Rendered sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 90ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:21:46 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:22:02 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 83ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:22:15 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAlbums (20191213222513)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (19.3ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "title" character varying NOT NULL, "year" integer NOT NULL, "band_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191213222513_create_albums.rb:3
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX  "index_albums_on_band_id" ON "albums"  ("band_id")[0m
+  ↳ db/migrate/20191213222513_create_albums.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213222513"]]
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/session/new" for ::1 at 2019-12-13 15:45:31 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 15:45:33 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTracks (20191213224916)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (34.4ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "title" character varying NOT NULL, "ord" integer NOT NULL, "lyrics" character varying, "band_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191213224916_create_tracks.rb:3
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_band_id" ON "tracks"  ("band_id")[0m
+  ↳ db/migrate/20191213224916_create_tracks.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213224916"]]
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Changeforeignkey (20191213225335)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "band_id"[0m
+  ↳ db/migrate/20191213225335_changeforeignkey.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Changeforeignkey (20191213225335)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "band_id"[0m
+  ↳ db/migrate/20191213225335_changeforeignkey.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "tracks" ADD "album_id" integer NOT NULL[0m
+  ↳ db/migrate/20191213225335_changeforeignkey.rb:4
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_album_id" ON "tracks"  ("album_id")[0m
+  ↳ db/migrate/20191213225335_changeforeignkey.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213225335"]]
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/session/new" for ::1 at 2019-12-13 16:17:47 -0700
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.6ms)
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 73ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:17:49 -0700
+
+SyntaxError - syntax error, unexpected ')', expecting ']'
+...y(params[email: params[:email])
+...                              ^:
+  app/controllers/users_controller.rb:4:in `'
+
+Started POST "/__better_errors/e9c7c8fac1907ea6/variables" for ::1 at 2019-12-13 16:17:50 -0700
+Started GET "/users/new" for ::1 at 2019-12-13 16:18:12 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 87ms (Views: 54.0ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:18:14 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:18:15 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:18:16 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:18:17 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 16:18:21 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:18:23 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:19:02 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 80ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-12-13 16:19:11 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"d6O1MiLcEhMjua5yajrv3WmrgIwJ1Sa7i77CHMOJTvP6q371LBwRhGhlu1NlmuAUE3bV5h7gLCPw9XIVOUb6gQ==", "user"=>{"email"=>"test@123.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@123.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RPBYgu0-GMs1aKrWIunwnw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test@123.com"], ["password_digest", "$2a$12$Kgk0vXiDMJ4YeA4Ylg3vtO3Q7l.yGmxN4a7bh0cQQmvZAYfTVPRne"], ["session_token", "RPBYgu0-GMs1aKrWIunwnw"], ["created_at", "2019-12-13 23:19:11.681999"], ["updated_at", "2019-12-13 23:19:11.681999"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@123.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["updated_at", "2019-12-13 23:19:11.711475"], ["id", 1]]
+  ↳ app/models/user.rb:36
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 477ms (ActiveRecord: 22.2ms)
+
+
+Started GET "/users/1" for ::1 at 2019-12-13 16:19:11 -0700
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started POST "/__better_errors/ada0fd7a0b4ca588/variables" for ::1 at 2019-12-13 16:19:11 -0700
+Started POST "/__better_errors/ada0fd7a0b4ca588/variables" for ::1 at 2019-12-13 16:19:32 -0700
+Started GET "/users/new" for ::1 at 2019-12-13 16:20:25 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.3ms)
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 133ms (Views: 74.2ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 16:29:45 -0700
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15
+Completed 200 OK in 518ms (Views: 465.8ms | ActiveRecord: 18.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Changecolumn (20191213233037)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "albums" DROP COLUMN "band_id"[0m
+  ↳ db/migrate/20191213233037_changecolumn.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "albums" ADD "band_id" integer NOT NULL[0m
+  ↳ db/migrate/20191213233037_changecolumn.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "albums" ADD "studio" boolean DEFAULT TRUE NOT NULL[0m
+  ↳ db/migrate/20191213233037_changecolumn.rb:7
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213233037"]]
+  ↳ bin/rails:9
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addindextobandsname (20191213233701)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_bands_on_name" ON "bands"  ("name")[0m
+  ↳ db/migrate/20191213233701_addindextobandsname.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213233701"]]
+  ↳ bin/rails:9
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addindextoalbums (20191213233814)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_albums_on_band_id" ON "albums"  ("band_id")[0m
+  ↳ db/migrate/20191213233814_addindextoalbums.rb:3
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_albums_on_title" ON "albums"  ("title")[0m
+  ↳ db/migrate/20191213233814_addindextoalbums.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213233814"]]
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addindextotracks (20191213234123)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "lyrics"[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "tracks" ADD "lyrics" text NOT NULL[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:5
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_tracks_on_ord" ON "tracks"  ("ord")[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mDROP INDEX  "album_id"[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addindextotracks (20191213234123)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "lyrics"[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "tracks" ADD "lyrics" text NOT NULL[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:5
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_tracks_on_ord" ON "tracks"  ("ord")[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:8
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Addindextotracks (20191213234123)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "tracks" DROP COLUMN "lyrics"[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "tracks" ADD "lyrics" text NOT NULL[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:5
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_tracks_on_ord" ON "tracks"  ("ord")[0m
+  ↳ db/migrate/20191213234123_addindextotracks.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213234123"]]
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(974681527665755280)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users/new" for ::1 at 2019-12-13 19:28:48 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 127ms (Views: 69.0ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:28:55 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:29:07 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:29:21 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 19:29:29 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/session" for ::1 at 2019-12-13 19:29:32 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session_path" for ::1 at 2019-12-13 19:30:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/session_path"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-12-13 19:30:30 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:32:20 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (7.0ms)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:54:30 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (5.3ms)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:54:32 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (4.9ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:54:33 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:54:34 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (8.4ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:58:19 -0700
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (4.1ms)
+Completed 200 OK in 25ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 19:59:59 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rapkat/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4/lib/rails/templates/rails/welcome/index.html.erb (7.4ms)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session" for ::1 at 2019-12-13 20:00:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-12-13 20:02:19 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:02:19 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 405ms (Views: 358.7ms | ActiveRecord: 12.4ms)
+
+
+Started DELETE "/session" for ::1 at 2019-12-13 20:02:34 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"d6lRJ0kVXpZLciu2GnuQqNrMzrpA7pRrxTbLtPEX8v36oZrgR9VdAQCuPpcV259hoBGb0FfbnvO+fXu9C9hGjw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bmG9qW_6JUuL1-l_W3iiUQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@123.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "odt1b06bdFiZeRcKJDLy7Q"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "odt1b06bdFiZeRcKJDLy7Q"], ["updated_at", "2019-12-14 03:02:34.986804"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 79ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:02:35 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (497.6ms)
+Completed 500 Internal Server Error in 503ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `new_user_url' for #<#<Class:0x000055815dd8c320>:0x000055815de23950>
+Did you mean?  new_session_url:
+  app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___1179867606561449762_47007057251200'
+  app/controllers/sessions_controller.rb:24:in `new'
+
+Started POST "/__better_errors/6c36237e48ab8936/variables" for ::1 at 2019-12-13 20:02:36 -0700
+Started POST "/__better_errors/6c36237e48ab8936/variables" for ::1 at 2019-12-13 20:03:16 -0700
+Started GET "/session/new" for ::1 at 2019-12-13 20:06:45 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 20:06:51 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:06:51 -0700
+Processing by BandsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:06:51 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 20:06:59 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:06:59 -0700
+Processing by BandsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:06:59 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 20:07:03 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:07:03 -0700
+Processing by BandsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:07:04 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:12:33 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:12:46 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:12:59 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:13:34 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:13:50 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:14:28 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:15:32 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:15:45 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 123ms (Views: 122.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:16:06 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:16:46 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:16:48 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:17:16 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:17:32 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:19:28 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:20:11 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:20:59 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:21:29 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 75ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:21:58 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:23:11 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 108ms (Views: 106.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:23:28 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:23:44 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:24:12 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 81ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:24:37 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:25:20 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 65ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:25:58 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 78ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:28:00 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:28:27 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:28:46 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:29:57 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:30:21 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 119ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:30:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:31:45 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:33:40 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:34:05 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:34:08 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:34:35 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 50ms (Views: 48.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:35:07 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 67ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:35:55 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:36:19 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:36:36 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 79ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:37:36 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 139ms (Views: 137.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:37:44 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:37:49 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:37:56 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:37:56 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:37:59 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:08 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:09 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:09 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:09 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:10 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:10 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:10 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:38 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:40 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:42 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:42 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:42 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:47 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:38:48 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:39:00 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:40:27 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:40:29 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 25.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:41:37 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 103ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:41:45 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:42:04 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:42:07 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:42:08 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:43:18 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 71ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:43:18 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 67ms (Views: 65.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:44:03 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 72ms (Views: 71.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:44:34 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:44:37 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:44:42 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:44:44 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 20:44:50 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:44:50 -0700
+Processing by BandsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:44:50 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:45:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 124ms (Views: 122.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:45:44 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:45:45 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:45:46 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:45:54 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 20:46:11 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:46:11 -0700
+Processing by BandsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:46:11 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 29ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:46:48 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 60ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-12-13 20:46:55 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"KnSWDe/P1DMvUTp7zrxrGtLR31upPPmKCsdCbJEeX6+nfF3K4Q/XpGSNL1rBHGTTqAyKMb4J8xJxjPJla9Hr3Q==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/session" for ::1 at 2019-12-13 20:48:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-12-13 20:49:07 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:49:07 -0700
+Processing by BandsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:49:07 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-12-13 20:49:09 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"sM5OmX86gFWNrE9//99ZMs65DKj5y7UVrxc2tXhfnto9xoVecfqDwsZwWl7wf1b7tGRZwu7+v43UXIa8gpAqqA==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:50:06 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:50:06 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-12-13 20:50:13 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"TZDupxcPzoHGp+FRpBhSCRXYy9hZLVnA7LkmJzyS2GvAmCVgGc/NFo179HCruF3AbwWesk4YU1iX8pYuxl1sGQ==", "user"=>{"email"=>"test@123.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@123.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6ConugswePBySFNR-fxc0Q"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 480ms (Views: 24.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users" for ::1 at 2019-12-13 20:50:25 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"BbUJ6Y3+1PlbIH+uxpfLkHeXEL6gTkJRtj9bc9PrV5mIvcIugz7XbhD8ao/JN8RZDUpF1Ld7SMnNdOt6KSTj6w==", "user"=>{"email"=>"tes123t@123.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tes123t@123.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lGbpDTB7dL0hJqgtjb_ZGQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "tes123t@123.com"], ["password_digest", "$2a$12$kQ99zHkdXAnMBTp2.kY0AO459ZpnYytqgfeOVmpcsh0/34vmOUNbm"], ["session_token", "lGbpDTB7dL0hJqgtjb_ZGQ"], ["created_at", "2019-12-14 03:50:25.771925"], ["updated_at", "2019-12-14 03:50:25.771925"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tes123t@123.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "7eBSEs9FwpP60jKRC7znWQ"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "7eBSEs9FwpP60jKRC7znWQ"], ["updated_at", "2019-12-14 03:50:25.790259"], ["id", 2]]
+  ↳ app/models/user.rb:30
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 436ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 20:50:25 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7eBSEs9FwpP60jKRC7znWQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 70ms (Views: 41.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 20:51:55 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7eBSEs9FwpP60jKRC7znWQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 90ms (Views: 79.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 20:52:07 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7eBSEs9FwpP60jKRC7znWQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.2ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 106ms (Views: 96.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-12-13 20:52:41 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:52:41 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7eBSEs9FwpP60jKRC7znWQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/session" for ::1 at 2019-12-13 20:52:44 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"l8bfAKsd7AX0Jali9JQEieNuJFp1K5qIJOmKOXhChWAazhTHpd3vkr/5vEP7NAtAmbNxMGIekBBfojowgo0xEg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7eBSEs9FwpP60jKRC7znWQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tes123t@123.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "-RkGqZsC47JvIinO5eAcjw"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "-RkGqZsC47JvIinO5eAcjw"], ["updated_at", "2019-12-14 03:52:44.508131"], ["id", 2]]
+  ↳ app/models/user.rb:30
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 23ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:52:44 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:54:27 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-12-13 20:54:41 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ifxcA6NJkkSA9irxXDvrsHUzNWyIuecSFv1scQir0gYE9JfErYmR08sqP9BTm+R5D+5gBp+M7Yptttx48mRmdA==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/session" for ::1 at 2019-12-13 20:55:20 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-12-13 20:55:27 -0700
+Started GET "/bands" for ::1 at 2019-12-13 20:55:27 -0700
+Processing by BandsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :require_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:55:27 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-12-13 20:55:32 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gXbcjAqV4Zvu7BKUq74fnfhb5yN6ddKSXHNNn9YWuCgMfhdLBFXiDKUwB7WkHhBUgoaySW1A2AonOP2WLNkMWg==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session" for ::1 at 2019-12-13 20:56:10 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4BHtEorIHyN/aDp4eqD1/hLGtNbdiQJESZR80aZAPLptGSbVhAgctDS0L1l1APo3aBvhvMq8CNwy38zYXI+IyA==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/session" for ::1 at 2019-12-13 20:56:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/new" for ::1 at 2019-12-13 20:57:29 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:57:37 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:57:53 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:58:18 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:58:42 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-12-13 20:58:46 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"DNwUai/nYeZXkyGobD+Ta2kE3cpcSXGu4x0P/MLUmfSB1N+tISdicRxPNIljn5yiE9mIoEt8ezaYVr/1OBsthg==", "user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RO_oeDfT6wyTgqaauhSKqQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 455ms (Views: 32.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for ::1 at 2019-12-13 20:58:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/session/new" for ::1 at 2019-12-13 20:59:14 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:59:15 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:59:15 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-12-13 20:59:16 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for ::1 at 2019-12-13 20:59:17 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for ::1 at 2019-12-13 20:59:25 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Zza8vmFLlw84TQ1H8n2m6KBvLOrmCGF/7X3+zZHDNXLqPnd5b4uUmHORGGb93akh2rJ5gPE9a+eWNk7EawyBAA==", "user"=>{"email"=>"tes123t@123.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tes123t@123.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tes123t@123.com"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["updated_at", "2019-12-14 03:59:25.895242"], ["id", 2]]
+  ↳ app/models/user.rb:30
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+Redirected to http://localhost:3000/bands
+Completed 302 Found in 430ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 20:59:25 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:02:01 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 56ms (Views: 52.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:02:26 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 55ms (Views: 49.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:04:12 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 43.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:04:37 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 61ms (Views: 58.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:04:39 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 127ms (Views: 120.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:04:47 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 49ms (Views: 43.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:05:03 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 93ms (Views: 83.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:05:31 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:06:50 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 55ms (Views: 51.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:06:52 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:07:03 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:07:31 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:08:57 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:09:45 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-12-13 21:10:23 -0700
+Processing by BandsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/_form.html.erb (15.3ms)
+  Rendered bands/new.html.erb within layouts/application (17.3ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.8ms)
+
+
+
+NoMethodError - undefined method `title' for #<Band id: nil, name: nil, created_at: nil, updated_at: nil>:
+  app/views/bands/_form.html.erb:13:in `_app_views_bands__form_html_erb___3022776262121108623_70071620553920'
+  app/views/bands/new.html.erb:3:in `_app_views_bands_new_html_erb__101994952511541462_70071620518600'
+  app/controllers/bands_controller.rb:17:in `new'
+
+Started POST "/__better_errors/703f9d065ad98028/variables" for ::1 at 2019-12-13 21:10:23 -0700
+Started GET "/bands/new" for ::1 at 2019-12-13 21:11:47 -0700
+Processing by BandsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/_form.html.erb (11.9ms)
+  Rendered bands/new.html.erb within layouts/application (14.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.3ms)
+
+
+
+NoMethodError - undefined method `title' for #<Band id: nil, name: nil, created_at: nil, updated_at: nil>:
+  app/views/bands/_form.html.erb:13:in `_app_views_bands__form_html_erb___3022776262121108623_70071590915800'
+  app/views/bands/new.html.erb:3:in `_app_views_bands_new_html_erb__101994952511541462_70071590463500'
+  app/controllers/bands_controller.rb:17:in `new'
+
+Started POST "/__better_errors/52a5fe0d6653405e/variables" for ::1 at 2019-12-13 21:11:47 -0700
+Started GET "/bands/new" for ::1 at 2019-12-13 21:12:47 -0700
+Processing by BandsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/_form.html.erb (1.0ms)
+  Rendered bands/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 91ms (Views: 87.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bands" for ::1 at 2019-12-13 21:12:58 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"Yf6hiaTY8ZC9oKEGtOylaUR+xokSTPeMcEJQNEH4DZfs9mpOqhjyB/Z8tCe7TKqgPqOT4wV5/RQLCeA9uze55Q==", "band"=>{"name"=>"Duman"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+
+NoMethodError - undefined method `bands' for #<User:0x00007f75a1298858>:
+  app/controllers/bands_controller.rb:21:in `create'
+
+Started POST "/__better_errors/1963dcf3ffe08f55/variables" for ::1 at 2019-12-13 21:12:58 -0700
+Started POST "/bands" for ::1 at 2019-12-13 21:13:55 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"Yf6hiaTY8ZC9oKEGtOylaUR+xokSTPeMcEJQNEH4DZfs9mpOqhjyB/Z8tCe7TKqgPqOT4wV5/RQLCeA9uze55Q==", "band"=>{"name"=>"Duman"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.0ms)
+
+
+
+NoMethodError - undefined method `band' for #<User:0x00007f7595469008>:
+  app/controllers/bands_controller.rb:21:in `create'
+
+Started POST "/__better_errors/8d0cc4d0b24c96d6/variables" for ::1 at 2019-12-13 21:13:56 -0700
+Started POST "/bands" for ::1 at 2019-12-13 21:14:27 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"Yf6hiaTY8ZC9oKEGtOylaUR+xokSTPeMcEJQNEH4DZfs9mpOqhjyB/Z8tCe7TKqgPqOT4wV5/RQLCeA9uze55Q==", "band"=>{"name"=>"Duman"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:23
+  [1m[36mBand Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "Duman"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:23
+  [1m[36mBand Create (3.3ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Duman"], ["created_at", "2019-12-14 04:14:27.796815"], ["updated_at", "2019-12-14 04:14:27.796815"]]
+  ↳ app/controllers/bands_controller.rb:23
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:23
+Redirected to http://localhost:3000/bands/1
+Completed 302 Found in 79ms (ActiveRecord: 24.3ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:14:27 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  Rendered bands/show.html.erb within layouts/application (42.0ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 1.7ms)
+
+
+
+ArgumentError - Unknown validator: 'UniquenesssValidator':
+  app/models/album.rb:4:in `<class:Album>'
+  app/models/album.rb:1:in `<main>'
+  app/views/bands/show.html.erb:5:in `_app_views_bands_show_html_erb__1137343776222707520_70071595216980'
+  app/controllers/bands_controller.rb:12:in `show'
+
+Started POST "/__better_errors/a0b96b85161b1f39/variables" for ::1 at 2019-12-13 21:14:28 -0700
+Started GET "/bands/1" for ::1 at 2019-12-13 21:16:15 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (2.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (43.2ms)
+Completed 200 OK in 193ms (Views: 99.4ms | ActiveRecord: 34.9ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:17:00 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 61ms (Views: 55.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:17:59 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (1.1ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 54ms (Views: 42.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:18:03 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 110ms (Views: 105.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:18:35 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 83ms (Views: 77.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:18:51 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 71ms (Views: 59.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:19:25 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 48ms (Views: 41.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:19:44 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 56ms (Views: 51.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:19:56 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 33ms (Views: 24.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:20:06 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:20:27 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 46ms (Views: 32.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:20:54 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 80ms (Views: 63.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:21:05 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 71ms (Views: 66.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:21:11 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-12-13 21:21:19 -0700
+Processing by BandsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/_form.html.erb (0.7ms)
+  Rendered bands/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bands" for ::1 at 2019-12-13 21:21:37 -0700
+Processing by BandsController#create as HTML
+  Parameters: {"authenticity_token"=>"vr40noCFyrS30IM0Ig064OfBtjX/IaIpSnJqTGFF8JEztv9ZjkXJI/wMlhUtrTUpnRzjX+gUqLExOdpFm4pE4w==", "band"=>{"name"=>"Rock"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bands_controller.rb:23
+  [1m[36mBand Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bands" WHERE "bands"."name" = $1 LIMIT $2[0m  [["name", "Rock"], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:23
+  [1m[36mBand Create (0.4ms)[0m  [1m[32mINSERT INTO "bands" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Rock"], ["created_at", "2019-12-14 04:21:37.026660"], ["updated_at", "2019-12-14 04:21:37.026660"]]
+  ↳ app/controllers/bands_controller.rb:23
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bands_controller.rb:23
+Redirected to http://localhost:3000/bands/2
+Completed 302 Found in 12ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/bands/2" for ::1 at 2019-12-13 21:21:37 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 2]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:21:41 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:21:47 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bands/1/albums/new" for ::1 at 2019-12-13 21:22:03 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11
+  Rendering albums/new.html.erb within layouts/application
+  Rendered albums/new.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.0ms)
+
+
+
+NoMethodError - undefined method `title' for #<Band:0x00007f759bbab4f0>:
+  app/views/albums/new.html.erb:1:in `_app_views_albums_new_html_erb__821781301201224518_70071549476180'
+  app/controllers/albums_controller.rb:13:in `new'
+
+Started POST "/__better_errors/e16b0f39cb23a9c3/variables" for ::1 at 2019-12-13 21:22:03 -0700
+Started GET "/bands/1/albums/new" for ::1 at 2019-12-13 21:22:52 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mBand Load (0.8ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/_form.html.erb:20
+  Rendered albums/_form.html.erb (22.9ms)
+  Rendered albums/new.html.erb within layouts/application (26.1ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.5ms)
+
+
+
+NoMethodError - undefined method `title' for #<Band:0x00007f75a113cf40>:
+  app/views/albums/_form.html.erb:24:in `block in _app_views_albums__form_html_erb__2347659640655556623_70071595095860'
+  app/views/albums/_form.html.erb:20:in `_app_views_albums__form_html_erb__2347659640655556623_70071595095860'
+  app/views/albums/new.html.erb:3:in `_app_views_albums_new_html_erb__821781301201224518_70071595028000'
+  app/controllers/albums_controller.rb:13:in `new'
+
+Started POST "/__better_errors/bae531048a479fad/variables" for ::1 at 2019-12-13 21:22:53 -0700
+Started GET "/bands/1/albums/new" for ::1 at 2019-12-13 21:23:11 -0700
+Processing by AlbumsController#new as HTML
+  Parameters: {"band_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:11
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/albums/_form.html.erb:20
+  Rendered albums/_form.html.erb (4.3ms)
+  Rendered albums/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 77ms (Views: 70.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/albums" for ::1 at 2019-12-13 21:23:36 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"4EgJcuvSetbjVWSOucanaC+Nm/Iw0CMKtlrczA0/+oltQMK15RJ5QaiJca+2ZqihVVDOmCflKZLNEWzF9/BO+w==", "album"=>{"title"=>"Bilmem ne", "band_id"=>"1", "studio"=>"t", "year"=>"2019"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `albums' for #<User:0x00007f75a12743e0>:
+  app/controllers/albums_controller.rb:17:in `create'
+
+Started POST "/__better_errors/47be79cb1c44eb1f/variables" for ::1 at 2019-12-13 21:23:36 -0700
+Started POST "/albums" for ::1 at 2019-12-13 21:24:26 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"4EgJcuvSetbjVWSOucanaC+Nm/Iw0CMKtlrczA0/+oltQMK15RJ5QaiJca+2ZqihVVDOmCflKZLNEWzF9/BO+w==", "album"=>{"title"=>"Bilmem ne", "band_id"=>"1", "studio"=>"t", "year"=>"2019"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 6.8ms)
+
+
+
+NameError - uninitialized constant AlbumsController::Albums:
+  app/controllers/albums_controller.rb:17:in `create'
+
+Started POST "/__better_errors/d6dea45ee64e07b3/variables" for ::1 at 2019-12-13 21:24:27 -0700
+Started POST "/albums" for ::1 at 2019-12-13 21:24:41 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"authenticity_token"=>"4EgJcuvSetbjVWSOucanaC+Nm/Iw0CMKtlrczA0/+oltQMK15RJ5QaiJca+2ZqihVVDOmCflKZLNEWzF9/BO+w==", "album"=>{"title"=>"Bilmem ne", "band_id"=>"1", "studio"=>"t", "year"=>"2019"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mBand Load (1.0ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[36mAlbum Create (2.8ms)[0m  [1m[32mINSERT INTO "albums" ("title", "year", "created_at", "updated_at", "band_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Bilmem ne"], ["year", 2019], ["created_at", "2019-12-14 04:24:41.479344"], ["updated_at", "2019-12-14 04:24:41.479344"], ["band_id", 1]]
+  ↳ app/controllers/albums_controller.rb:18
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/albums_controller.rb:18
+Redirected to http://localhost:3000/albums/1
+Completed 302 Found in 146ms (ActiveRecord: 29.5ms)
+
+
+Started GET "/albums/1" for ::1 at 2019-12-13 21:24:41 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:6
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting end
+...   validates :ord, :uniqueness: { scope: :album_id }
+...                              ^
+/home/rapkat/Desktop/App_Academy_Classwork/Week 9/W9D5/MusicRapp/app/models/track.rb:7: syntax error, unexpected ':', expecting end
+        foreign_key: :album_id,
+                   ^:
+  app/models/track.rb:4:in `'
+  app/views/albums/show.html.erb:3:in `_app_views_albums_show_html_erb___2405887343590306360_70071528925620'
+  app/controllers/albums_controller.rb:7:in `show'
+
+Started POST "/__better_errors/6e57ab7d7d8ce54e/variables" for ::1 at 2019-12-13 21:24:41 -0700
+Started GET "/albums/1" for ::1 at 2019-12-13 21:25:02 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAlbum Load (1.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:6
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 30.4ms)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting end
+        foreign_key: :album_id,
+                   ^:
+  app/models/track.rb:6:in `'
+  app/views/albums/show.html.erb:3:in `_app_views_albums_show_html_erb___2405887343590306360_70071597388100'
+  app/controllers/albums_controller.rb:7:in `show'
+
+Started POST "/__better_errors/d7c86a5f97646bd8/variables" for ::1 at 2019-12-13 21:25:02 -0700
+Started GET "/albums/1" for ::1 at 2019-12-13 21:25:34 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:6
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mTrack Load (1.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."album_id" = $1[0m  [["album_id", 1]]
+  ↳ app/views/albums/show.html.erb:3
+  [1m[36mBand Load (0.9ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/albums/show.html.erb:24
+  Rendered albums/show.html.erb within layouts/application (110.9ms)
+Completed 200 OK in 271ms (Views: 157.0ms | ActiveRecord: 39.1ms)
+
+
+Started GET "/albums/1/tracks/new" for ::1 at 2019-12-13 21:25:40 -0700
+Processing by TracksController#new as HTML
+  Parameters: {"album_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:11
+  Rendering tracks/new.html.erb within layouts/application
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/tracks/_form.html.erb:20
+  Rendered tracks/_form.html.erb (19.6ms)
+  Rendered tracks/new.html.erb within layouts/application (23.8ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 4.2ms)
+
+
+
+NoMethodError - undefined method `name' for #<Album:0x00007f759a407cb8>:
+  app/views/tracks/_form.html.erb:24:in `block in _app_views_tracks__form_html_erb__4203064037413501874_70071527835980'
+  app/views/tracks/_form.html.erb:20:in `_app_views_tracks__form_html_erb__4203064037413501874_70071527835980'
+  app/views/tracks/new.html.erb:3:in `_app_views_tracks_new_html_erb___3095570462198265976_70071532070740'
+  app/controllers/tracks_controller.rb:13:in `new'
+
+Started POST "/__better_errors/95d201a11e3a4637/variables" for ::1 at 2019-12-13 21:25:40 -0700
+Started GET "/albums/1/tracks/new" for ::1 at 2019-12-13 21:26:18 -0700
+Processing by TracksController#new as HTML
+  Parameters: {"album_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:11
+  Rendering tracks/new.html.erb within layouts/application
+  [1m[36mAlbum Load (1.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ app/views/tracks/_form.html.erb:20
+  Rendered tracks/_form.html.erb (4.0ms)
+  Rendered tracks/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 39ms (Views: 32.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/tracks" for ::1 at 2019-12-13 21:27:24 -0700
+Processing by TracksController#create as HTML
+  Parameters: {"authenticity_token"=>"drEe2ZNiHnHaLEyPCPi3dQFlTrkc/L02Zv4p+5zalUP7udUenaId5pHwWa4HWLi8e7gb0wvJt64dtZnyZhUhMQ==", "track"=>{"title"=>"Bileyim mi", "album_id"=>"1", "ord"=>"1", "lyrics"=>"Bilmiyorum,\r\nne napiyorum,\r\nyapiyorum, \r\nama,\r\nbilmiyorum"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.2ms)
+
+
+
+NoMethodError - undefined method `tracks' for #<User:0x00007f759bb5e830>:
+  app/controllers/tracks_controller.rb:17:in `create'
+
+Started POST "/__better_errors/1623616eb9121119/variables" for ::1 at 2019-12-13 21:27:24 -0700
+Started POST "/tracks" for ::1 at 2019-12-13 21:27:58 -0700
+Processing by TracksController#create as HTML
+  Parameters: {"authenticity_token"=>"drEe2ZNiHnHaLEyPCPi3dQFlTrkc/L02Zv4p+5zalUP7udUenaId5pHwWa4HWLi8e7gb0wvJt64dtZnyZhUhMQ==", "track"=>{"title"=>"Bileyim mi", "album_id"=>"1", "ord"=>"1", "lyrics"=>"Bilmiyorum,\r\nne napiyorum,\r\nyapiyorum, \r\nama,\r\nbilmiyorum"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tracks_controller.rb:18
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:18
+  [1m[36mTrack Create (1.1ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "ord", "created_at", "updated_at", "album_id", "lyrics") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Bileyim mi"], ["ord", 1], ["created_at", "2019-12-14 04:27:58.672154"], ["updated_at", "2019-12-14 04:27:58.672154"], ["album_id", 1], ["lyrics", "Bilmiyorum,\r\nne napiyorum,\r\nyapiyorum, \r\nama,\r\nbilmiyorum"]]
+  ↳ app/controllers/tracks_controller.rb:18
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tracks_controller.rb:18
+Redirected to http://localhost:3000/tracks/1
+Completed 302 Found in 144ms (ActiveRecord: 40.8ms)
+
+
+Started GET "/tracks/1" for ::1 at 2019-12-13 21:27:58 -0700
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mTrack Load (1.5ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:6
+  Rendering tracks/show.html.erb within layouts/application
+  Rendered tracks/show.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.2ms)
+
+
+
+NoMethodError - undefined method `name' for #<Track:0x00007f7598893bd0>:
+  app/views/tracks/show.html.erb:1:in `_app_views_tracks_show_html_erb___4410362468608372294_70071523517060'
+  app/controllers/tracks_controller.rb:7:in `show'
+
+Started POST "/__better_errors/573a24757d8e1f63/variables" for ::1 at 2019-12-13 21:27:58 -0700
+Started GET "/tracks/1" for ::1 at 2019-12-13 21:28:21 -0700
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mTrack Load (1.4ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:6
+  Rendering tracks/show.html.erb within layouts/application
+  Rendered tracks/show.html.erb within layouts/application (33.1ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 2.4ms)
+
+
+
+NoMethodError - undefined method `name' for #<Track:0x00007f75a15a2eb8>:
+  app/views/tracks/show.html.erb:1:in `_app_views_tracks_show_html_erb___4410362468608372294_70071597467160'
+  app/controllers/tracks_controller.rb:7:in `show'
+
+Started POST "/__better_errors/88e9426c47a4b538/variables" for ::1 at 2019-12-13 21:28:21 -0700
+Started GET "/tracks/1" for ::1 at 2019-12-13 21:28:29 -0700
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:6
+  Rendering tracks/show.html.erb within layouts/application
+  Rendered tracks/show.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `name' for #<Track:0x00007f75a0dc8ff8>:
+  app/views/tracks/show.html.erb:1:in `_app_views_tracks_show_html_erb___4410362468608372294_70071593393820'
+  app/controllers/tracks_controller.rb:7:in `show'
+
+Started POST "/__better_errors/c089c0ec94319e2f/variables" for ::1 at 2019-12-13 21:28:29 -0700
+Started GET "/tracks/1" for ::1 at 2019-12-13 21:28:54 -0700
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:6
+  Rendering tracks/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tracks/show.html.erb:13
+  Rendered tracks/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/albums/1" for ::1 at 2019-12-13 21:29:09 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:6
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."album_id" = $1[0m  [["album_id", 1]]
+  ↳ app/views/albums/show.html.erb:3
+  [1m[36mBand Load (0.6ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/albums/show.html.erb:24
+  Rendered albums/show.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 92ms (Views: 81.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:29:10 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (1.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 79ms (Views: 72.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:29:18 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 56ms (Views: 51.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:29:18 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 101ms (Views: 97.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:29:19 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.4ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bands/new" for ::1 at 2019-12-13 21:29:21 -0700
+Processing by BandsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/new.html.erb within layouts/application
+  Rendered bands/_form.html.erb (1.1ms)
+  Rendered bands/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:29:23 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.5ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 34.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bands/1" for ::1 at 2019-12-13 21:29:24 -0700
+Processing by BandsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBand Load (0.2ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bands_controller.rb:11
+  Rendering bands/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."band_id" = $1[0m  [["band_id", 1]]
+  ↳ app/views/bands/show.html.erb:5
+  Rendered bands/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/albums/1" for ::1 at 2019-12-13 21:29:25 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/albums_controller.rb:6
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."album_id" = $1[0m  [["album_id", 1]]
+  ↳ app/views/albums/show.html.erb:3
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT  "bands".* FROM "bands" WHERE "bands"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/albums/show.html.erb:24
+  Rendered albums/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 38ms (Views: 32.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tracks/1" for ::1 at 2019-12-13 21:29:27 -0700
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tracks_controller.rb:6
+  Rendering tracks/show.html.erb within layouts/application
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/tracks/show.html.erb:13
+  Rendered tracks/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bands" for ::1 at 2019-12-13 21:29:34 -0700
+Processing by BandsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UBNlr7T6FMQQ86hl9ojVhw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  Rendering bands/index.html.erb within layouts/application
+  [1m[36mBand Load (0.3ms)[0m  [1m[34mSELECT "bands".* FROM "bands"[0m
+  ↳ app/views/bands/index.html.erb:4
+  Rendered bands/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.5ms)
+
+
