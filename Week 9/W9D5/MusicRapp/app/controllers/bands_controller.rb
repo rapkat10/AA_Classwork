@@ -26,7 +26,6 @@ class BandsController < ApplicationController
             flash.now[:errors] = @band.errors.full_messages
             render :new
         end
-
     end
 
     def edit
