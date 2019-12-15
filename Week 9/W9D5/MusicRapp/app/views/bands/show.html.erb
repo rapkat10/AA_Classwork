@@ -2,10 +2,9 @@
 
 <h4>Albums</h4>
 
-
-  <% @band.albums.each do |album| %>
-    <a href="<%= album_url(album) %>"><p><%= album.title %></p></a>
-  <% end %>
+<% @band.albums.each do |album| %>
+  <a href="<%= album_url(album) %>"><p><%= album.title %></p></a>
+<% end %>
 
 <h4>Links</h4>
 <ul class='links'>

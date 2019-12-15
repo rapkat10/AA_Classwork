@@ -2,7 +2,7 @@
 <% http_method = album.persisted? ? "PATCH" : "POST" %>
 <% button_text = album.persisted? ? "Update Album!" : "Create Album!" %>
 
-<form class='form' action="<%= action_url %>" method="POST">
+<form action="<%= action_url %>" method="POST">
   <input type="hidden" name="_method" value="<%= http_method %>">
   <input
     type="hidden"
