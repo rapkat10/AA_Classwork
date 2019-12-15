@@ -1,8 +1,7 @@
 <% action_url = track.persisted? ? track_url(track) : tracks_url %>
 <% http_method = track.persisted? ? "PATCH" : "POST" %>
 
-
-<form class='form' action="<%= action_url %>" method="POST" %>
+<form action="<%= action_url %>" method="POST" %>
   <input type="hidden" name="_method" value="<%= http_method %>">
   <input
     type="hidden"
@@ -13,7 +12,6 @@
   <label for='track-title'>Title</label>
   <input id='track-title' type="text" name="track[title]" value="<%= track.title %>">
 </p>
-
 <p>
 <label for='track-album'>Album</label>
   <select id='track-album' name="track[album_id]">
@@ -26,19 +24,16 @@
     <% end %>
   </select>
 </p>
-
 <p>
   <label>Ord
   <input type="number" name="track[ord]" value="<%= track.ord %>">
   </label>
 </p>
-
 <p>
   <label for="track_lyrics">Lyrics</label><br>
   <textarea id="track_lyrics"
     rows="10" cols="40"
     name="track[lyrics]"><%= track.lyrics %></textarea>
 </p>
-
   <input type="submit">
 </form>
