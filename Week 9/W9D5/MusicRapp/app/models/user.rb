@@ -24,6 +24,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     # vefore_validates :ensure_session_token
 
+    has_many :bands,
+        foreign_key: :user_id,
+        class_name: :Band
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil if user.nil?
