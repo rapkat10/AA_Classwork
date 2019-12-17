@@ -6,36 +6,27 @@ RSpec.describe UsersController, type: :controller do
     let!(:user2) { create(:user) }
 
     describe 'Get #index' do
-        it 'renders the users #index' do
+        it 'renders the users #index and sets @users to all users' do
             get :index
             expect(response).to render_template(:index)
-        end
-        it 'sets @users to all users' do
-            get :index
             all_users = controller.instance_variable_get(:@users)
             expect(all_users).to eq(User.all)
         end
     end
 
     describe 'Get #new' do
-        it 'renders the new template' do
+        it 'renders the new template and sets @user to an instance of user' do
             get :new
             expect(response).to render_template(:new)
-        end
-        it 'sets @user to an instance of user' do
-            get :new
             user = controller.instance_variable_get(:@user)
             expect(user.instance_of?(User)).to be true
         end
     end
 
     describe 'Get #show' do
-        it 'renders the show template' do
+        it 'renders the show template and sets @user to the specified user' do
             get :show, params: {id: user1.id}
             expect(response).to render_template(:show)
-        end
-        it 'sets @user to the specified user' do
-            get :show, params: {id: user1.id}
             user = controller.instance_variable_get(:@user)
             expect(user).to eq(user1)
         end
@@ -44,12 +35,8 @@ RSpec.describe UsersController, type: :controller do
 
     describe 'Post #create' do
         context 'with valid params' do
-            it 'creates a user in the database' do
-
-            end
-            
-            it 'redirects to users show page' do
-
+            it 'creates a user in the database and redirects to users show page' do
+                
             end
         end
 
