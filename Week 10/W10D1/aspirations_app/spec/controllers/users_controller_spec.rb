@@ -35,18 +35,11 @@ RSpec.describe UsersController, type: :controller do
 
     describe 'Post #create' do
         context 'with valid params' do
-            it 'creates a user in the database and redirects to users show page' do
-                
-            end
+            it 'creates a user in the database and redirects to users show page' 
         end
 
         context 'with in-valid params' do
-            it 'doesn''t create a user in the database' do
-
-            end
-            it 'renders the new template' do
-
-            end
+            it 'doesn''t create a user in the database and renders the new template' 
         end
     end
     
@@ -65,24 +58,15 @@ RSpec.describe UsersController, type: :controller do
 
     describe 'Put #update' do
         context 'with valid params' do
-            it 'updates the user in the database' do
+            it 'updates the user in the database and redirects to users show page' do
                 put :update, params: {id: user1.id, user: {username: 'rick', password: 'hunter12' }}
                 expect(User.find(user1.id).username).to eq('rick')
-            end
-            
-            it 'redirects to users show page' do
-                put :update, params: {id: user1.id, user: {username: 'rick', password: 'hunter12' }}
                 expect(response).to redirect_to(user_url(user1.id))
             end
         end
 
         context 'with in-valid params' do
-            it 'doesn''t update the database' do
-
-            end
-            it 'renders the edit template' do
-
-            end
+            it 'doesn''t update the database and renders the edit template' 
         end
         
     end
