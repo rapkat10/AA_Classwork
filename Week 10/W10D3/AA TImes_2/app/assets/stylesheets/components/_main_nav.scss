@@ -1,0 +1,47 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.left-nav > ul {
+    display: flex;
+    align-items: auto;
+
+}
+
+.left-nav > ul > li {
+    font-family: sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 3px;
+    padding: 5px;
+}
+
+.left-nav > ul > li:hover,
+.right-nav > i:hover {
+    background-color: #eee;
+}
+
+.right-nav > i:last-of-type {
+font-size: 13px;
+}
+
+.right-nav {
+    display: flex;
+    height: 20px;
+    margin-top: 3px;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.left-nav span {
+    margin: 13px
+}
+
+
+
+.right-nav i {
+    padding: 5px;
+}
