@@ -19,6 +19,7 @@ class Session
 
   def store_session(res)
     cookie = @session.to_json
+    
     res.set_cookie("_rails_lite_app", cookie)
   end
 end
