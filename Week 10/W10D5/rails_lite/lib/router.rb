@@ -3,7 +3,7 @@ class Route
 
   def initialize(pattern, http_method, controller_class, action_name)
     @pattern = pattern
-    
+
     @http_method = http_method
     @controller_class = controller_class
 
@@ -60,6 +60,7 @@ class Router
   # either throw 404 or call run on a matched route
   def run(req, res)
     return match(req).run(req, res) unless match(req).nil?
+    
     res.status = 404
   end
 end
