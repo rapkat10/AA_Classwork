@@ -23,6 +23,7 @@ class ControllerBase
   def redirect_to(url)
     if already_built_response?
       raise "already rendered"
+
     else
       @res.location = url
       @res.status = 302
@@ -37,6 +38,7 @@ class ControllerBase
   def render_content(content, content_type)
     if already_built_response? 
       raise "already rendered"
+
     else
       @res['Content-Type'] = content_type
       @res.write(content)
@@ -67,6 +69,7 @@ class ControllerBase
   def invoke_action(name)
     self.send(name)
     render(name) unless already_built_response?
+    
   end
 end
 
