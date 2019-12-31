@@ -12,7 +12,6 @@ class Employee
         add_boss if @boss.class == Manager
     end
 
-
     def bonus(multiplier)
       @salary * multiplier
     end

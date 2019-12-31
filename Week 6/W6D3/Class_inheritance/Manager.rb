@@ -1,5 +1,4 @@
 require_relative 'Employee.rb'
-
 class Manager < Employee
 
     attr_reader :name, :title, :salary, :boss, :employees
