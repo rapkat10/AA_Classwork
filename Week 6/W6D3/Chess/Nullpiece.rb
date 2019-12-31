@@ -4,7 +4,3 @@ class Nullpiece < Piece
 
 
 end
-
-null = Nullpiece.new
-
-p null
