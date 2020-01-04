@@ -30,6 +30,7 @@ end
 describe "stock_picker" do
     let(:prices) { [50, 60, 10, 20] }
     let(:pair) { [10, 20] }
+    
     it "does not modify original array" do
         expect(stock_picker(prices)).not_to be(prices)
     end
