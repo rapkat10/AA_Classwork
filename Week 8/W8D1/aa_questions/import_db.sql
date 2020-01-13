@@ -16,4 +16,13 @@ CREATE TABLE questions (
     FOREIGN KEY (author_id) REFERENCES users(id)
 );
 
+CREATE TABLE question_follows (
+    id INTEGER PRIMARY KEY,
+    question_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    
+    FOREIGN KEY (question_id) REFERENCES questions(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 
