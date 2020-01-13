@@ -25,4 +25,14 @@ CREATE TABLE question_follows (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+CREATE TABLE replies (
+    id INTEGER PRIMARY KEY,
+    body TEXT NOT NULL,
+    question_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    reply_id INTEGER NOT NULL,
 
+    FOREIGN KEY (question_id) REFERENCES questions(id),
+    FOREIGN KEY (reply_id) REFERENCES replies(id)
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
