@@ -1,6 +1,10 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS questions;
+DROP TABLE IF EXISTS question_follows;
+DROP TABLE IF EXISTS replies;
+DROP TABLE IF EXISTS question_likes;
+
 PRAGMA foreign_keys = ON;
-
-
 
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
@@ -30,7 +34,7 @@ CREATE TABLE replies (
     body TEXT NOT NULL,
     question_id INTEGER NOT NULL,
     user_id INTEGER NOT NULL,
-    reply_id INTEGER NOT NULL,
+    reply_id INTEGER,
 
     FOREIGN KEY (question_id) REFERENCES questions(id),
     FOREIGN KEY (reply_id) REFERENCES replies(id)
@@ -55,7 +59,7 @@ INSERT INTO
   questions (title, body, user_id)
 VALUES
     ('Sports', 'Whats your favorite sport?', 1),
-    ('Country', 'Which country do you wish to live in?', 2)
+    ('Country', 'Which country do you wish to live in?', 2);
 
 
 INSERT INTO
@@ -88,5 +92,4 @@ VALUES
 INSERT INTO
     question_likes (user_id, question_id)
 VALUES
-    (1, 1),
-    (2, 2);
+    (1, 2);
