@@ -15,3 +15,26 @@ class QuestionsDatabase < SQLite3::Database
 end
 
 class User
+
+
+end
+
+class Question
+
+
+end
+
+class Reply
+
+
+end
+
+class QuestionLike
+
+end
+
+class QuestionFollow
+
+end
+
+

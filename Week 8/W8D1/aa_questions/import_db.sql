@@ -65,29 +65,11 @@ VALUES
 INSERT INTO
     replies (body, question_id, reply_id, user_id)
 VALUES
-    (
-        ('Soccer is my favorite sport!'),
-        (SELECT id
-        from questions
-        WHERE title = 'Sports'),
-        (SELECT reply_id
-        FROM replies),
-        (SELECT id
-        FROM users
-        WHERE fname = 'Rapkat')
-    ),
+    ('Soccer is my favorite sport!', 
+    (SELECT id FROM questions WHERE title = 'Sports'), 1, 1),
 
-    (
-        ('Not a specific country, but maybe a country in Europe!'),
-        (SELECT id
-        from questions
-        WHERE title = 'Country'),
-        (SELECT reply_id
-        FROM replies),
-        (SELECT id
-        FROM users
-        WHERE fname = 'App')
-    );
+    ('Not a specific country, but maybe a country in Europe!',
+    (SELECT id FROM questions WHERE title = 'Country'),2, 2);
 
 INSERT INTO
     question_likes (user_id, question_id)
