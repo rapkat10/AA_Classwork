@@ -77,6 +77,8 @@ class Reply
         reply.empty? ? nil : Reply.new(reply.first)
     end
 
+    
+
 end
 
 
@@ -100,6 +102,18 @@ class Question
                 questions
             WHERE
                 questions.id = :id
+        SQL
+        question.empty? ? nil : Question.new(question.first)
+    end
+
+    def self.find_by_author_id(author_id)
+        question = QuestionsDatabase.instance.execute(<<-SQL, author_id: author_id)
+            SELECT
+                questions.*
+            FROM
+                questions
+            WHERE
+                questions.user_id = :author_id
         SQL
         question.empty? ? nil : Question.new(question.first)
     end
