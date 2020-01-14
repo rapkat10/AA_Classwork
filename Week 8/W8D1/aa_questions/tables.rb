@@ -77,7 +77,29 @@ class Reply
         reply.empty? ? nil : Reply.new(reply.first)
     end
 
-    
+    def self.find_by_user_id(user_id)
+        reply = QuestionsDatabase.instance.execute(<<-SQL, user_id: user_id)
+            SELECT
+                replies.*
+            FROM
+                replies
+            WHERE
+                replies.user_id = :user_id
+        SQL
+        reply.empty? ? nil : Reply.new(reply.first)
+    end
+ 
+    def self.find_by_question_id(question_id)
+        replies = QuestionsDatabase.instance.execute(<<-SQL, question_id: question_id)
+            SELECT
+                replies.*
+            FROM
+                replies
+            WHERE
+                replies.question_id = :question_id
+        SQL
+        replies.empty? ? nil : replies.map { | reply | Reply.new(reply) }
+    end
 
 end
 
