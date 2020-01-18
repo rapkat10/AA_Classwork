@@ -42,7 +42,7 @@ module Associatable
     define_method(name) do
       foreign = self.send(options.foreign_key)
       return nil unless foreign
-      @options.model_class.where({options.primary_key => foreign}).first
+      options.model_class.where({options.primary_key => foreign}).first
     end
     assoc_options[name] = options
   end
