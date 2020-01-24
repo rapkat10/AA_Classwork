@@ -17,4 +17,8 @@ class CatRentalRequest < ApplicationRecord
             .where('end_date BETWEEN ? AND ?', self.start_date, self.end_date)
     end
 
+    def overlapping_approved_requests
+        
+    end
+
 end
