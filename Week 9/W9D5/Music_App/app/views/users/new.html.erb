@@ -1,0 +1,23 @@
+<h1>Sign Up</h1>
+
+
+<form class="sign-up" action="<%= users_url %>" method="POST">
+    <input type="hidden" 
+        name="authenticity_token" 
+            value="form_authenticity_token">
+
+    <label>Email
+        <p>
+            <input type="email" name="user[email]" value="">
+        </p>
+    </label>
+
+    <label>Password
+        <p>
+            <input type="password" name="user[password]" value="">
+        </p>
+    </label>
+
+    <input type="submit" value="Sign Up">
+
+</form>
