@@ -1,0 +1,11 @@
+<h1>Currently viewing Track: <%= @track.title %></h1>
+
+
+<p><%= @track.lyrics %></p>
+
+<br><br>
+<p>This link takes you to youtube! It will always be the one song Eyvallah</p>
+<p><a href="https://www.youtube.com/watch?v=JpvUSjaSeLg" target="_blank">Eyvallah</a></p>
+
+<br><br>
+<p><a class="links-tracks" href="<%= album_url(@track.album_id) %>">Back to Albums</a></p>
