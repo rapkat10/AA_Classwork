@@ -14,13 +14,38 @@
  *= require_self
  */
 
-
-.header {
-    font-style: oblique;
-    font-family: monospace;
+* {
+    background-color: beige;
 }
 
-a {
-    background-color: aqua;
-    border-radius: 5px;
+body {
+    width: 800px;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.header a {
+    font-style: oblique;
+    font-family: monospace;
+    text-decoration: none;
+    color: blue;
+}
+
+.logged_in {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home, .home a {
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: forestgreen;
+}
+
+.sign-out {
+    display: flex;
+    justify-content: flex-end;
 }

@@ -1,10 +1,14 @@
 <h1>Sign In</h1>
 
+<a class="Sign-up-link" href="<%= new_user_url %>">Sign Up</a>
+
+<br><br>
+
 
 <form class="sign-in" action="<%= session_url %>" method="POST">
     <input type="hidden" 
         name="authenticity_token" 
-            value="form_authenticity_token">
+            value="<%= form_authenticity_token %>">
 
     <label>Email
         <p>

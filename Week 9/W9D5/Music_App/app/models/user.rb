@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :bands, dependent: :destroy
+
     before_validation :ensure_session_token!
 
     def self.find_by_credentials(email, password)

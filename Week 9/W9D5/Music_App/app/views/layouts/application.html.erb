@@ -11,26 +11,31 @@
 
   <body>
 
-    <h1 class="header">Music App</h1>
+      <h1 class="header"><a href="<%= root_url %>">Music App</a></h1>
+      
+      <% if logged_in? %>
+        <p class="logged_in">Current User is: <%= current_user.email %></p> 
+        <p class="home"><a href="<%= root_url %>">Home</a></p>
+        <br><br>
+
+        <form class="sign-out" action="<%= session_url %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="hidden" 
+              name="authenticity_token" 
+                  value="<%= form_authenticity_token %>">
+          <input type="submit" value="Sign Out">
+        </form>
+        
+      <% end %>
+      
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+      <% end %>
+      
+
+      <%= yield %>
     
-    <% if logged_in? %>
-      Current User is: <%= current_user.email %>  
-
-      <form class="sign-out" action="<%= session_url %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="hidden" 
-            name="authenticity_token" 
-                value="form_authenticity_token">
-        <input type="submit" value="Sign Out">
-      </form>
-
-    <% else %>
-      <a class="Sign-up-link" href="<%= new_user_url %>">Sign Up</a>
-      <a class="Sign-in-link" href="<%= new_session_url %>">Sign In</a>
-    <% end %>
-    
-    <%= flash[:errors] %>
-
-    <%= yield %>
   </body>
 </html>
