@@ -19,17 +19,38 @@
 // That was super fun, right ?
 
 //   Array#uniq
-
 Array.prototype.myuniq = function () {
     let newArr = [];
     this.forEach(function(el) {
         if (!newArr.includes(el)) {
             newArr.push(el);
-        })
-    }
+        }
+    })
     console.log(newArr)
 };
+[1, 2, 2, 3, 3, 3].myuniq() // [1, 2, 3]
 
-[1, 2, 2, 3, 3, 3].myuniq()
+// Array#twoSum
+Array.prototype.mytwosum = function () {
+    let newArr = [];
+    let array = this
+    this.forEach(function (el1) {
+        array.forEach(function(el2) {
+            let index1 = array.indexOf(el1)
+            let index2 = array.indexOf(el2)
+            if (el1 + el2 === 0 && index2 > index1) {
+                newArr.push([index1, index2])
+            }
+        })
+    })
+    console.log(newArr)
+};
+[1, 2, -2, 3, 5, -3].mytwosum() // [[1, 2], [3, 5]]
 
-
+// Array#transpose
+Array.prototype.mytranspose = function () {
+    let result = this
+    let arr = result[0].map((col, i) => result.map(row => row[i]));
+    console.log(arr)
+};
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]].mytranspose() // [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
