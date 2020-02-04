@@ -1,1 +1,24 @@
 /* PHASE 4: Footer */
+footer {
+    color: #aaa;
+}
+
+.links {
+    padding: 20px;
+    float: right;
+}
+
+.copyright {
+    display: block;
+    padding: 20px;
+    float: left;
+}
+
+.links > li {
+    float: left;
+    padding: 0 0 0 20px;
+}
+
+footer a:hover {
+    color: #000;
+}
