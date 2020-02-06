@@ -1,1 +1,30 @@
 /* PHASE 6: Sidebar */
+
+.profile-picture {
+    display: block;
+    border: 1px solid lightgray;
+    position: relative;
+}
+
+.profile-info > h2 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.profile-nav > li {
+    border-bottom: 1px solid lightgray;
+}
+
+.profile-nav > li:first-child {
+    border-top: 1px solid lightgray;
+}
+
+.profile-nav a {
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.profile-nav a:hover {
+    background: grey;
+}
