@@ -55,9 +55,6 @@ const mycallback1 = function (el) {
     console.log(el + 10);
 };
 
-const mycallback2 = function (el) {
-    return el * 10;
-};
 
 Array.prototype.myEach = function (callback) {
     let array = this;
@@ -67,7 +64,7 @@ Array.prototype.myEach = function (callback) {
     }
 };
 
-[1, 2, 3, 4].myEach(mycallback1);
+[1, 2, 3, 4].myEach(el => mycallback1(el));
 
 // def mymap(&prc)
 //     result = []
@@ -87,22 +84,26 @@ Array.prototype.myEach = function (callback) {
 //     console.log(result)
 // };
 
+const mycallback2 = function (el) {
+    return el * 10;
+};
+
 Array.prototype.myMap = function (callback) {
     let result = [];
-    function myEachCb (el) {
-        result.push(callback(el));
-    }; 
-    this.myEach(myEachCb)
+    // function myEachCb (el) {
+    //     result.push(callback(el));
+    // }; 
+    this.myEach(el => result.push(callback(el)))
+    // result.push(callback(this[i]))
     console.log(result)
 };
 
-[1, 2, 3, 4].myMap(mycallback2);
+[1, 2, 3, 4].myMap(el => mycallback2(el));
 
 
 const mycallback3 = function (el) {
-    return el * 2;
+    return el;
 };
-
 
 Array.prototype.myReduce = function (callback, initialValue) {
     // let result = 0;
@@ -113,8 +114,35 @@ Array.prototype.myReduce = function (callback, initialValue) {
     function myReduceCb(el) {
         acc += callback(el);
     };
-    this.myEach(myReduceCb)
-    console.log(acc)
+    this.myEach(myReduceCb);
+    console.log(acc);
 };
 
-[1, 2, 3].myReduce(mycallback3);
+[1, 2, 3].myReduce(mycallback3); // 6
+[1, 2, 3].myReduce(mycallback3, 25); // 31
+
+// // Array#myInject
+// Array.prototype.myReduce = function (func, initialValue) {
+
+//     let arr = this;
+
+//     if (initialValue === undefined) {
+//         initialValue = arr[0];
+//         arr = arr.slice(1);
+//     }
+
+//     let result = initialValue;
+
+//     arr.myEach(el => result = func(result, el));
+//     // arr.each do |el|
+//     //     result = prc.call(result, el)
+//     // end
+
+//     return result;
+// };
+
+// console.log(NUMS.myReduce((total, item) => total + item));
+
+// [1, 2, 3].my_reduce do |acc, el|
+//     acc + el
+// end
