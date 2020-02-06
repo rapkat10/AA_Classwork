@@ -121,6 +121,8 @@ Array.prototype.myReduce = function (callback, initialValue) {
 [1, 2, 3].myReduce(mycallback3); // 6
 [1, 2, 3].myReduce(mycallback3, 25); // 31
 
+
+
 // // Array#myInject
 // Array.prototype.myReduce = function (func, initialValue) {
 
