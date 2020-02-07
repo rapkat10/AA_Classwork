@@ -22,7 +22,6 @@ function askIfGreaterThan(el1, el2, callback) {
 function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
 
   if (i == (arr.length - 1)) {
-   
     outerBubbleSortLoop(madeAnySwaps);
     return;
   }
@@ -32,10 +31,8 @@ function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
       const tmp = arr[i];
       arr[i] = arr[i + 1];
       arr[i + 1] = tmp;
-
       madeAnySwaps = true;
     }
-
     innerBubbleSortLoop(
       arr, i + 1, madeAnySwaps, outerBubbleSortLoop
     );
