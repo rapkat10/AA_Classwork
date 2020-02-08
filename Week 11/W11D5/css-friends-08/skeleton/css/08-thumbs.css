@@ -1,0 +1,17 @@
+/* PHASE 8: Thumbs */
+
+.friends {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.thumb:hover {
+    display: block;
+}
+
+
+
+.friends > li {
+    width: 60px;
+    height: 60px;
+}
