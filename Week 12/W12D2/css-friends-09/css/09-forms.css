@@ -1,0 +1,11 @@
+/* PHASE 9: Forms */
+
+.content-main .thumb {
+    display: flex;
+
+}
+
+.thumb > li {
+    display: flex;
+}
+
