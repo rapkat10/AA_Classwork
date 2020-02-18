@@ -1,0 +1,16 @@
+
+h1 {
+    font-family: sans-serif;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+.clock {
+
+}
