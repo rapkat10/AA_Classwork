@@ -1,0 +1,8 @@
+.grid, h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.tile {
+    border-style: outset;
+}
