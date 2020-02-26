@@ -1,0 +1,60 @@
+.detail-section {
+    border: 7px solid orange;
+    // background-color: gray;
+    background: linear-gradient(-315deg, #f02005, rgb(6, 139, 13));
+    border-radius: 5px;
+    width: 1300px;
+    // height: 600px;
+    height: 80vh;
+    overflow-y: scroll;
+    margin: 10px;
+    padding: 5px;
+}
+
+.poke-image {
+    border: 3px solid rgb(7, 0, 0);
+    // background-color: rgb(245, 63, 63);
+    background: linear-gradient(315deg, #f32e0b, rgb(2, 88, 201));
+    border-radius: 5px;
+    width: 800px;
+    height: 300px;
+    margin-left: 250px;
+    margin-top: 15px;
+}
+
+.poke-image img {
+    padding: 20px;
+    padding-left: 250px;
+    // text-align: center;
+    width: 250px;
+    height: 250px;
+
+}
+
+.poke-name {
+    font-size: 40px;
+    font-weight: 1000;
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+    // color: rgb(15, 15, 14);
+    color: rgb(22, 151, 236);
+    font-style: oblique;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.detail-section strong {
+    list-style-type: none;
+    padding: 10px;
+    padding-left: 25px;
+    font-size: 25px;
+    color: rgb(22, 151, 236);
+    font-weight: 850;
+    display: block;
+    text-align: center;
+    font-style: oblique;
+    font-family: cursive;
+    font-style: italic;
+}
+
