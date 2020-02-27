@@ -37,7 +37,7 @@ const clearErrors = () => ({
 export const signUp = user => dispatch => signup(user)
     .then(user => dispatch(receiveCurrentUser(user)));
 
-export const logIn = formUser => dispatch => login(formUser)
+export const logIn = user => dispatch => login(user)
     .then(user => dispatch(receiveCurrentUser(user)));
 
 export const logOut = () => dispatch => logout()

@@ -7,7 +7,7 @@ const _nullsession = {
     currentUser: null
 };
 
-export default (state = _nullsession, action) => {
+export default (state = [], action) => {
     Object.freeze(state);
 
     switch (action.type) {
