@@ -1,43 +1,39 @@
-import React from 'react';
-
-class Clock extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {};
-    this.date = new Date();
-    this.tick = this.tick.bind(this);
-  }
-  
-  componentDidMount() {
-    let timeHandle = setInterval(this.tick, 1000);
-  }
-  
-  render () {
-    if (!this.state.date) {
-      return <div>Loading...</div>
-    }
-    
-    return <div>
-      <h1> Clock </h1>
-      <div class="clock">
-        <li>
-            <p class="time">
-            Time: 
-            {this.hours = this.state.date.getHours()}:
-            {this.minutes = this.state.date.getMinutes()}:
-            {this.seconds = this.state.date.getSeconds()}
-            </p>
-        </li>
-     </div>
-    </div>;
-    
-  }
-  
-  tick () {
-    this.setState({date: new Date()});
-  }
-
-}
-
+import React, { useState, useEffect } from 'react';
 
 export default Clock; 
+
+function Clock() {
+
+  const [date, setDate] = useState(new Date());
+  // debugger;
+  useEffect(() => {
+    const newDate = new Date();
+    // debugger;
+    // setInterval(setDate({newDate}), 1000);
+    setDate({newDate});
+    return () => {
+      setDate({newDate});
+    };
+  }, [date]);
+
+  if (!date.newDate) return null;
+  
+  const hour = date.newDate.getHours();
+  const minutes = date.newDate.getMinutes();
+  const seconds = date.newDate.getSeconds();
+  return (
+    <div>
+      <h1> Clock </h1>
+      <div className="clock">
+        <li>
+          <p className="time">
+            Time:
+            {hour}:
+            {minutes}:
+            {seconds}
+          </p>
+        </li>
+      </div>
+    </div>
+  );
+}
