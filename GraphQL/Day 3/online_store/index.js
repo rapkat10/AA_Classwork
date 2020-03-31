@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI
-require('./server/models');
+require('./models');
 const graphQLHTTP = require('express-graphql');
 const expressPlayground = require('graphql-playground-middleware-express').default;
 const { schema, resolvers } = require('./schema');
@@ -16,6 +16,13 @@ mongoose
   .then(() => console.log('Connected to MongoDB successfully'))
   .catch(err => console.log(err));
   
+if (process.env.NODE_ENV !== 'production') {
+  const cors = require('cors');
+  app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
+}
+
   app.use(
   '/graphql',
     passportAuthenticate(passport),
@@ -27,18 +34,6 @@ mongoose
 
 app.get('/playground', expressPlayground({ endpoint: '/graphql' }));
 
-app.get('/hello', (req, res) => res.send('Hello World!'));
-
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
-
-// const express = require("express");
-
-// const app = require("./server/server");
-
-// const port = process.env.PORT || 5000;
-
-// app.listen(port, () => {
-//   console.log(`Server listening on port ${port}`);
-// });
