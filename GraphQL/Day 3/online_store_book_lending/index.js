@@ -9,7 +9,6 @@ const { schema, resolvers } = require('./schema');
 const passport = require('passport');
 require('./config/passport')(passport);
 app.use(passport.initialize());
-const { passportAuthenticate } = require('./middlewares')
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
@@ -23,12 +22,21 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 }
 
-  app.use(
-  '/graphql',
-    passportAuthenticate(passport),
-    graphQLHTTP({
-      schema: schema,
-      rootValue: resolvers
+const morgan = require("morgan");
+app.use(morgan("dev"));
+
+const {
+  graphqlLogger,
+  passportAuthenticate
+} = require('./middlewares');
+
+app.use(
+  "/graphql",
+  passportAuthenticate(passport),
+  graphqlLogger(true),
+  graphQLHTTP({
+    schema: schema,
+    rootValue: resolvers
   })
 );
 
