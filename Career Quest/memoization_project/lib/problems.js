@@ -140,6 +140,24 @@ function minChange(coins, amount, memo = {}) {
 
 //     memo[amount] = results.length + 1;
 //     return memo[amount];
+
+// another way
+//  let numberOfWays = [];
+//  for (let i = 0; i <= amount; i++) {
+//      numberOfWays[i] = 0;
+//  }
+//  numberOfWays[0] = 1;
+
+//  for (let j = 0; j < coins.length; j++) {
+//      let coin = coins[j];
+
+//      for (let higherAmount = coin; higherAmount <= amount; higherAmount++) {
+//          let higherAmountRemainder = higherAmount - coin;
+//          numberOfWays[higherAmount] += numberOfWays[higherAmountRemainder];
+//      }
+//  }
+
+//  return numberOfWays[amount];
 // }
 
 // console.log(leetCodeQuestion(5, [1, 2, 5]));  // 4
